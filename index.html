@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Página sin título</title>
+<meta name="generator" content="WYSIWYG Web Builder 15 - http://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="enviaform.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("#FileUpload1 :file").on('change', function()
+   {
+      var input = $(this).parents('.input-group').find(':text');
+      input.val($(this).val());
+   });
+});
+</script>
+</head>
+<body>
+<div id="wb_Form1">
+<form name="Enviar_Archivo" method="post" action="<?php echo basename(__FILE__); ?>" enctype="multipart/form-data" id="Form1">
+<label for="" id="Label1">Enviar Pedido / Cotizacion</label>
+<label for="FileUpload1" id="Label2">Enviar Archivo </label>
+<div id="FileUpload1" class="input-group">
+<input class="form-control" type="text" readonly="">
+<label class="input-group-btn">
+<input type="file" name="FileUpload1" id="FileUpload1-file"><span class="btn">Browse...</span>
+</label>
+</div>
+<input type="submit" id="Button1" name="enviabt" value="Enviar">
+<div id="wb_Image1">
+<img src="images/comercialinc_LOGO-01.jpg" id="Image1" alt=""></div>
+<label for="" id="Label3">Nombre Persona / Empresa</label>
+<input type="text" id="Editbox1" name="Editbox1" value="" spellcheck="false">
+<div id="wb_Image2">
+<img src="images/ingcomer.png" id="Image2" alt=""></div>
+</form>
+</div>
+</body>
+</html>
